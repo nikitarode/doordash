@@ -1,0 +1,31 @@
+<html>   
+    <div class="chatContainer" ng-controller="chatController" ng-init="displayUserDetails()">
+        <div class="rooms">
+            <div class="personDetails">
+                <p id="personName">{{fullName}}</p>
+                <p id="onlineDet">{{logedSince}}</p>
+            </div>
+            <ul>
+                <li><a  ng-click="handleSelect()">Analytics</a></li>
+                <li><a  ng-click="handleSelect()">Business</a></li>
+                <li><a  ng-click="handleSelect()">Design</a></li>
+                <li><a  ng-click="handleSelect()">Engineering</a></li>
+                <li><a  ng-click="handleSelect()">HR</a></li>
+                <li><a  ng-click="handleSelect()">Operations</a></li>
+                <li><a  ng-click="handleSelect()">Special Ops</a></li>
+            </ul>
+        </div>
+        <div class="messages">
+            <div class="header">
+                <p id="subject">Select a meeting room</p>
+                <p id="attendeeList">{{ listofAttendee.length > 0 ? listofAttendee : 'No one joined yet' }}</p>
+            </div>
+            <div class="chatMsg" id="chatWindow">                    
+            </div>
+            <form id="chatMsgForm" ng-submit="addChat()">
+                <input id="msgInput" type="text" placeholder="Type a Message.." required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</html>
